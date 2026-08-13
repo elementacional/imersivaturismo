@@ -1,0 +1,3204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Imersiva Turismo de Experiências — experiências sob medida, trilhas, travessias, ecoturismo, educação ambiental e vivências na natureza.">
+
+    <meta name="keywords"
+          content="turismo de experiência, ecoturismo, trilhas, travessias, turismo de aventura, Mata Atlântica, educação ambiental, São Paulo">
+
+    <meta name="author"
+          content="Imersiva Turismo de Experiências">
+
+    <title>Imersiva Turismo de Experiências | Conecte com a Essência</title>
+
+    <!-- Fonte Inter (opcional: remova se não quiser carregar via Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ==========================================================
+           IMERSIVA TURISMO DE EXPERIÊNCIAS
+           ONE-PAGE WEBSITE
+           ========================================================== */
+
+        :root {
+            --navy: #071d2b;
+            --navy-2: #0b2c3d;
+            --green: #b7f000;
+            --green-dark: #83b500;
+            --white: #ffffff;
+            --off-white: #f5f8f5;
+            --light: #edf3ef;
+            --gray: #657277;
+            --dark: #172126;
+
+            --radius-sm: 12px;
+            --radius-md: 22px;
+            --radius-lg: 32px;
+
+            --shadow:
+                0 18px 50px rgba(7, 29, 43, 0.10);
+
+            --transition:
+                all 0.35s cubic-bezier(.2,.8,.2,1);
+
+            /* fallback hero image (local) */
+            --hero-image: url("assets/mata-atlantica-hero.jpg");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background: var(--off-white);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+        /* ==========================================================
+           HEADER
+           ========================================================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background:
+                rgba(7, 29, 43, 0.88);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,.08);
+
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background:
+                rgba(7, 29, 43, .97);
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,.15);
+        }
+
+        .nav {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+
+            color: var(--white);
+            font-weight: 900;
+            letter-spacing: .08em;
+        }
+
+        .logo-symbol {
+            width: 39px;
+            height: 39px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: var(--green);
+            color: var(--navy);
+
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-text strong {
+            font-size: 17px;
+        }
+
+        .logo-text span {
+            margin-top: 5px;
+
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: .2em;
+
+            color: rgba(255,255,255,.62);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color: rgba(255,255,255,.8);
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--green);
+
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 12px 19px;
+
+            border-radius: 50px;
+
+            background: var(--green);
+            color: var(--navy) !important;
+
+            font-weight: 800 !important;
+
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(183,240,0,.25);
+        }
+
+        .menu-toggle {
+            display: none;
+
+            border: 0;
+            background: transparent;
+            color: white;
+
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* ==========================================================
+           HERO
+           ========================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            /* now uses the CSS custom property --hero-image (set by JS) */
+            background-image:
+                linear-gradient(
+                    110deg,
+                    rgba(4,22,31,.96) 0%,
+                    rgba(4,22,31,.76) 45%,
+                    rgba(4,22,31,.25) 100%
+                ),
+                var(--hero-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            color: var(--white);
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(183,240,0,.10),
+                    transparent 35%
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 790px;
+
+            padding-top: 80px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 25px;
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+
+            color: var(--green);
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 28px;
+            height: 2px;
+
+            background: var(--green);
+        }
+
+        .hero h1 {
+            max-width: 850px;
+
+            font-size:
+                clamp(3.2rem, 7vw, 6.5rem);
+
+            line-height: .94;
+            letter-spacing: -.055em;
+
+            margin-bottom: 27px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            color: rgba(255,255,255,.78);
+
+            font-size:
+                clamp(1rem, 2vw, 1.25rem);
+
+            line-height: 1.7;
+
+            margin-bottom: 36px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            min-height: 54px;
+            padding: 0 25px;
+
+            border-radius: 50px;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: var(--navy);
+
+            box-shadow:
+                0 12px 35px rgba(183,240,0,.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 18px 45px rgba(183,240,0,.25);
+        }
+
+        .btn-outline {
+            color: white;
+
+            border:
+                1px solid rgba(255,255,255,.3);
+
+            background:
+                rgba(255,255,255,.04);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,.1);
+            border-color: rgba(255,255,255,.6);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+
+            color: rgba(255,255,255,.55);
+
+            font-size: 10px;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 42px;
+            background: rgba(255,255,255,.4);
+
+            animation: scrollPulse 1.8s infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%,100% {
+                opacity: .3;
+                transform: scaleY(.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+
+        /* ==========================================================
+           GENERAL SECTION
+           ========================================================== */
+
+        section {
+            padding: 105px 0;
+            scroll-margin-top: 78px;
+        }
+
+        .section-header {
+            max-width: 710px;
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            display: block;
+
+            margin-bottom: 12px;
+
+            color: var(--green-dark);
+
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size:
+                clamp(2.2rem, 4vw, 4rem);
+
+            line-height: 1.03;
+            letter-spacing: -.04em;
+
+            color: var(--navy);
+
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+
+        /* ==========================================================
+           BENEFÍCIOS
+           ========================================================== */
+
+        .benefits {
+            background: var(--white);
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .benefit-card {
+            padding: 35px;
+
+            border:
+                1px solid #e4ebe7;
+
+            border-radius: var(--radius-md);
+
+            background: var(--white);
+
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(183,240,0,.7);
+
+            box-shadow: var(--shadow);
+        }
+
+        .icon {
+            width: 55px;
+            height: 55px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 25px;
+
+            border-radius: 16px;
+
+            background: var(--navy);
+            color: var(--green);
+        }
+
+        .icon svg {
+            width: 25px;
+            height: 25px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 12px;
+
+            color: var(--navy);
+
+            font-size: 1.35rem;
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+            font-size: .96rem;
+        }
+
+        /* ==========================================================
+           EXPERIÊNCIAS
+           ========================================================== */
+
+        .experiences {
+            background: var(--off-white);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .experience-card {
+            position: relative;
+
+            min-height: 390px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            overflow: hidden;
+
+            border-radius: var(--radius-lg);
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 20%,
+                    rgba(3,17,24,.92) 100%
+                ),
+                var(--image)
+                center/cover no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .experience-card::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(183,240,0,.05),
+                    transparent 60%
+                );
+
+            transition: var(--transition);
+        }
+
+        .experience-card:hover::before {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(183,240,0,.18),
+                    transparent 70%
+                );
+        }
+
+        .experience-content {
+            position: relative;
+            z-index: 2;
+
+            padding: 30px;
+        }
+
+        .experience-number {
+            margin-bottom: 13px;
+
+            color: var(--green);
+
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .15em;
+        }
+
+        .experience-card h3 {
+            margin-bottom: 10px;
+
+            font-size: 1.7rem;
+            line-height: 1.1;
+        }
+
+        .experience-card p {
+            color: rgba(255,255,255,.76);
+
+            font-size: .92rem;
+        }
+
+        /* defaults for experience images (overridden by JS) */
+        .experience-1 { --image: url("assets/trilhas.jpg"); }
+        .experience-2 { --image: url("assets/educacao-ambiental.jpg"); }
+        .experience-3 { --image: url("assets/roteiros-personalizados.jpg"); }
+
+        /* ==========================================================
+           PROCESSO
+           ========================================================== */
+
+        .process {
+            background: var(--navy);
+            color: white;
+        }
+
+        .process .section-title {
+            color: white;
+        }
+
+        .process .section-description {
+            color: rgba(255,255,255,.65);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 1px;
+
+            background: rgba(255,255,255,.1);
+        }
+
+        .process-step {
+            padding: 35px 27px;
+
+            background: var(--navy);
+        }
+
+        .process-number {
+            margin-bottom: 35px;
+
+            color: var(--green);
+
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .2em;
+        }
+
+        .process-step h3 {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .process-step p {
+            color: rgba(255,255,255,.62);
+            font-size: .9rem;
+        }
+
+        /* ==========================================================
+           SOBRE
+           ========================================================== */
+
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .about-visual {
+            min-height: 580px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: var(--radius-lg);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(7,29,43,.1),
+                    rgba(7,29,43,.7)
+                ),
+                url("assets/imersiva-sobre.jpg")
+                center/cover no-repeat;
+        }
+
+        .about-badge {
+            position: absolute;
+
+            right: 25px;
+            bottom: 25px;
+
+            max-width: 220px;
+
+            padding: 22px;
+
+            border-radius: 20px;
+
+            background: rgba(7,29,43,.91);
+            color: white;
+
+            backdrop-filter: blur(12px);
+        }
+
+        .about-badge strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: var(--green);
+
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .about-badge span {
+            color: rgba(255,255,255,.7);
+            font-size: .8rem;
+        }
+
+        .about-copy p {
+            margin-bottom: 20px;
+
+            color: var(--gray);
+        }
+
+        .about-copy .highlight {
+            color: var(--navy);
+
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .about-list {
+            list-style: none;
+
+            margin-top: 30px;
+        }
+
+        .about-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+
+            margin-bottom: 15px;
+
+            color: var(--gray);
+        }
+
+        .about-list li::before {
+            content: "✓";
+
+            display: grid;
+            place-items: center;
+
+            flex-shrink: 0;
+
+            width: 23px;
+            height: 23px;
+
+            border-radius: 50%;
+
+            background: var(--green);
+            color: var(--navy);
+
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        /* ==========================================================
+           SEGURANÇA
+           ========================================================== */
+
+        .safety {
+            background: var(--light);
+        }
+
+        .safety-layout {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .safety-box {
+            padding: 42px;
+
+            border-radius: var(--radius-lg);
+
+            background: var(--navy);
+            color: white;
+
+            box-shadow: var(--shadow);
+        }
+
+        .safety-box h3 {
+            margin-bottom: 15px;
+
+            font-size: 1.8rem;
+        }
+
+        .safety-box p {
+            color: rgba(255,255,255,.68);
+        }
+
+        .safety-points {
+            display: grid;
+            gap: 13px;
+
+            margin-top: 25px;
+        }
+
+        .safety-point {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+            color: rgba(255,255,255,.82);
+
+            font-size: .9rem;
+        }
+
+        .safety-point span {
+            width: 8px;
+            height: 8px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background: var(--green);
+        }
+
+        .safety-copy h2 {
+            margin-bottom: 20px;
+
+            color: var(--navy);
+
+            font-size:
+                clamp(2rem, 4vw, 3.4rem);
+
+            line-height: 1.05;
+        }
+
+        .safety-copy p {
+            color: var(--gray);
+        }
+
+        /* ==========================================================
+           PROVA SOCIAL
+           ========================================================== */
+
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .testimonial {
+            padding: 32px;
+
+            border:
+                1px solid #e5ebe8;
+
+            border-radius: var(--radius-md);
+
+            background: var(--white);
+        }
+
+        .stars {
+            margin-bottom: 20px;
+
+            color: var(--green-dark);
+
+            letter-spacing: 4px;
+        }
+
+        .testimonial p {
+            margin-bottom: 25px;
+
+            color: var(--gray);
+
+            font-size: .95rem;
+        }
+
+        .client {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .client-avatar {
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: var(--navy);
+            color: var(--green);
+
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .client strong {
+            display: block;
+            color: var(--navy);
+            font-size: .9rem;
+        }
+
+        .client span {
+            color: var(--gray);
+            font-size: .75rem;
+        }
+
+        /* ==========================================================
+           FAQ
+           ========================================================== */
+
+        .faq {
+            background: var(--off-white);
+        }
+
+        .faq-list {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom:
+                1px solid #dce4df;
+        }
+
+        .faq-question {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 25px 0;
+
+            border: 0;
+            background: transparent;
+
+            color: var(--navy);
+
+            text-align: left;
+            font-weight: 800;
+
+            cursor: pointer;
+        }
+
+        .faq-question span:last-child {
+            color: var(--green-dark);
+
+            font-size: 22px;
+
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            max-height: 0;
+
+            overflow: hidden;
+
+            color: var(--gray);
+
+            transition:
+                max-height .45s ease,
+                padding .45s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 250px;
+            padding-bottom: 23px;
+        }
+
+        .faq-item.active .faq-question span:last-child {
+            transform: rotate(10deg);
+        }
+
+        /* ==========================================================
+           CONTATO
+           ========================================================== */
+
+        .contact {
+            background: var(--navy);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns:
+                .9fr 1.1fr;
+
+            gap: 70px;
+
+            align-items: start;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-description {
+            color: rgba(255,255,255,.65);
+        }
+
+        .contact-info {
+            margin-top: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+
+            margin-bottom: 22px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+
+            display: grid;
+            place-items: center;
+
+            flex-shrink: 0;
+
+            border-radius: 12px;
+
+            background: rgba(183,240,0,.12);
+            color: var(--green);
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .contact-item span {
+            color: rgba(255,255,255,.62);
+            font-size: .9rem;
+        }
+
+        .contact-form {
+            padding: 35px;
+
+            border-radius: var(--radius-lg);
+
+            background: white;
+            color: var(--dark);
+        }
+
+        .form-title {
+            margin-bottom: 25px;
+
+            color: var(--navy);
+
+            font-size: 1.6rem;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--navy);
+
+            font-size: .8rem;
+            font-weight: 800;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border:
+                1px solid #dce4df;
+
+            border-radius: 12px;
+
+            outline: none;
+
+            background: #f8faf8;
+            color: var(--dark);
+
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--green-dark);
+
+            box-shadow:
+                0 0 0 3px rgba(183,240,0,.12);
+        }
+
+        .form-group textarea {
+            min-height: 105px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+
+            border: 0;
+
+            margin-top: 5px;
+        }
+
+        /* ==========================================================
+           FOOTER
+           ========================================================== */
+
+        footer {
+            padding: 45px 0 25px;
+
+            background: #04141e;
+            color: white;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns:
+                1.5fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 35px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.08);
+        }
+
+        .footer-brand p {
+            max-width: 360px;
+
+            margin-top: 17px;
+
+            color: rgba(255,255,255,.48);
+
+            font-size: .86rem;
+        }
+
+        .footer-title {
+            margin-bottom: 16px;
+
+            color: white;
+
+            font-size: .85rem;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 9px;
+
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,.52);
+
+            font-size: .85rem;
+
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--green);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            padding-top: 23px;
+
+            color: rgba(255,255,255,.35);
+
+            font-size: .75rem;
+        }
+
+        /* ==========================================================
+           WHATSAPP FLUTUANTE
+           ========================================================== */
+
+        .whatsapp {
+            position: fixed;
+
+            right: 23px;
+            bottom: 23px;
+
+            z-index: 999;
+
+            width: 59px;
+            height: 59px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: var(--green);
+            color: var(--navy);
+
+            box-shadow:
+                0 12px 35px rgba(0,0,0,.25);
+
+            transition: var(--transition);
+        }
+
+        .whatsapp:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .whatsapp svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .whatsapp::before {
+            content: "";
+
+            position: absolute;
+            inset: -5px;
+
+            border:
+                1px solid rgba(183,240,0,.4);
+
+            border-radius: 50%;
+
+            animation: whatsappPulse 2s infinite;
+        }
+
+        @keyframes whatsappPulse {
+            0% {
+                transform: scale(.9);
+                opacity: .8;
+            }
+
+            70%,100% {
+                transform: scale(1.25);
+                opacity: 0;
+            }
+        }
+
+        /* ==========================================================
+           ANIMAÇÕES DE ENTRADA
+           ========================================================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================
+           RESPONSIVIDADE
+           ========================================================== */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                position: fixed;
+
+                top: 78px;
+                left: 0;
+                right: 0;
+
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+
+                padding: 25px 5%;
+
+                background: var(--navy);
+
+                border-top:
+                    1px solid rgba(255,255,255,.08);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .benefit-grid,
+            .experience-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-grid,
+            .safety-layout,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-visual {
+                min-height: 450px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .hero h1 {
+                font-size: 3.4rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .benefit-grid,
+            .experience-grid,
+            .testimonial-grid,
+            .process-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-card {
+                min-height: 330px;
+            }
+
+            .about-visual {
+                min-height: 400px;
+            }
+
+            .safety-box,
+            .contact-form {
+                padding: 25px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+            .whatsapp {
+                right: 16px;
+                bottom: 16px;
+            }
+        }
+
+        /* ==========================================================
+           PREFERS REDUCED MOTION
+           ========================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            * { animation: none !important; transition: none !important; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ==============================================================
+     HEADER
+     ============================================================== -->
+
+<header class="header" id="header">
+
+    <div class="container nav">
+
+        <a href="#inicio" class="logo" aria-label="Imersiva Turismo">
+
+            <div class="logo-symbol">I</div>
+
+            <div class="logo-text">
+                <strong>IMERSIVA</strong>
+                <span>TURISMO DE EXPERIÊNCIAS</span>
+            </div>
+
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Abrir menu"
+            aria-controls="navLinks"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+        <nav role="navigation" aria-label="Navegação principal">
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#experiencias">
+                        Experiências
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#processo">
+                        Como funciona
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#sobre">
+                        A Imersiva
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#seguranca">
+                        Segurança
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#depoimentos">
+                        Depoimentos
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="#contato"
+                        class="nav-cta">
+
+                        Planeje sua experiência
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ==============================================================
+     HERO
+     ============================================================== -->
+
+<main>
+
+<section class="hero" id="inicio">
+
+    <!--
+    VÍDEO OPCIONAL:
+
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="assets/mata-atlantica.mp4" type="video/mp4">
+    </video>
+    -->
+
+    <div class="container">
+
+        <div class="hero-content reveal">
+
+            <div class="eyebrow">
+                Turismo de experiência
+            </div>
+
+            <h1>
+                Desconecte do caos.
+                <span>Conecte com a essência.</span>
+            </h1>
+
+            <p class="hero-description">
+                Experiências sob medida, trilhas imersivas,
+                ecoturismo e vivências na natureza para quem
+                busca sair do roteiro convencional e viver
+                o destino de verdade.
+            </p>
+
+            <div class="hero-actions">
+
+                <a
+                    href="#experiencias"
+                    class="btn btn-primary">
+
+                    Conheça as experiências
+                    →
+                </a>
+
+                <a
+                    href="#contato"
+                    class="btn btn-outline">
+
+                    Planeje sua rota
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-scroll">
+
+        <span>Explore</span>
+
+        <div class="scroll-line"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================================================
+     BENEFÍCIOS
+     ============================================================== -->
+
+<section class="benefits">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                Por que Imersiva?
+            </span>
+
+            <h2 class="section-title">
+                Não vendemos apenas destinos.
+                Criamos experiências.
+            </h2>
+
+            <p class="section-description">
+                Cada experiência é pensada para aproximar
+                pessoas, território e natureza com propósito.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-grid">
+
+            <article class="benefit-card reveal">
+
+                <div class="icon">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2">
+
+                        <path d="M3 20h18"/>
+                        <path d="M5 20V10l7-6 7 6v10"/>
+                        <path d="M9 20v-6h6v6"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Sob medida
+                </h3>
+
+                <p>
+                    A experiência começa antes da saída.
+                    Entendemos o perfil do grupo, objetivo,
+                    condicionamento, tempo disponível e
+                    expectativas para construir a melhor rota.
+                </p>
+
+            </article>
+
+
+            <article class="benefit-card reveal">
+
+                <div class="icon">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2">
+
+                        <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/>
+                        <path d="M9 12l2 2 4-4"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Segurança
+                </h3>
+
+                <p>
+                    Planejamento, gestão de riscos,
+                    orientação e condução responsável
+                    fazem parte da experiência do início
+                    ao fim.
+                </p>
+
+            </article>
+
+
+            <article class="benefit-card reveal">
+
+                <div class="icon">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2">
+
+                        <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/>
+                        <path d="M12 8v8"/>
+                        <path d="M8 12h8"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Conexão real
+                </h3>
+
+                <p>
+                    Natureza, cultura, território e
+                    aprendizado se encontram para criar
+                    uma experiência que permanece depois
+                    do retorno.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================================================
+     EXPERIÊNCIAS
+     ============================================================== -->
+
+<section class="experiences" id="experiencias">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                O que fazemos
+            </span>
+
+            <h2 class="section-title">
+                Experiências para sair
+                do roteiro.
+            </h2>
+
+            <p class="section-description">
+                Diferentes formatos. Uma mesma essência:
+                viver o território de maneira consciente,
+                ativa e significativa.
+            </p>
+
+        </div>
+
+
+        <div class="experience-grid">
+
+            <article class="experience-card experience-1 reveal">
+
+                <div class="experience-content">
+
+                    <div class="experience-number">
+                        01 — AVENTURA
+                    </div>
+
+                    <h3>
+                        Trilhas & Travessias
+                    </h3>
+
+                    <p>
+                        Caminhos, montanhas, Mata Atlântica
+                        e biodiversidade com planejamento,
+                        interpretação ambiental e segurança.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="experience-card experience-2 reveal">
+
+                <div class="experience-content">
+
+                    <div class="experience-number">
+                        02 — APRENDIZADO
+                    </div>
+
+                    <h3>
+                        Educação & Vivências
+                    </h3>
+
+                    <p>
+                        Experiências que aproximam pessoas
+                        da natureza, agroecologia, educação
+                        ambiental e cultura local.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="experience-card experience-3 reveal">
+
+                <div class="experience-content">
+
+                    <div class="experience-number">
+                        03 — PERSONALIZAÇÃO
+                    </div>
+
+                    <h3>
+                        Roteiros Personalizados
+                    </h3>
+
+                    <p>
+                        Você apresenta o objetivo.
+                        A Imersiva constrói a experiência
+                        adequada ao seu grupo.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================================================
+     PROCESSO
+     ============================================================== -->
+
+<section class="process" id="processo">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                Como funciona
+            </span>
+
+            <h2 class="section-title">
+                Sua experiência começa
+                antes da trilha.
+            </h2>
+
+            <p class="section-description">
+                Uma experiência sob medida exige escuta,
+                planejamento e cuidado.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-step reveal">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Converse conosco
+                </h3>
+
+                <p>
+                    Conte seu objetivo, perfil do grupo,
+                    período e tipo de experiência desejada.
+                </p>
+
+            </div>
+
+
+            <div class="process-step reveal">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Avaliamos o cenário
+                </h3>
+
+                <p>
+                    Analisamos destino, logística,
+                    características do grupo e condições
+                    necessárias para a atividade.
+                </p>
+
+            </div>
+
+
+            <div class="process-step reveal">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Construímos a rota
+                </h3>
+
+                <p>
+                    Desenvolvemos uma proposta alinhada
+                    ao propósito da experiência.
+                </p>
+
+            </div>
+
+
+            <div class="process-step reveal">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Você vive a experiência
+                </h3>
+
+                <p>
+                    Da preparação ao retorno, cada etapa
+                    é conduzida com planejamento e atenção.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================================================
+     SOBRE
+     ============================================================== -->
+
+<section class="about" id="sobre">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-visual reveal">
+
+                <div class="about-badge">
+
+                    <strong>IMERSIVA</strong>
+
+                    <span>
+                        Mais do que guiar passos,
+                        revelamos caminhos.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-copy reveal">
+
+                <span class="section-label">
+                    A essência da Imersiva
+                </span>
+
+                <h2 class="section-title">
+                    Mais do que guiar passos,
+                    escolhemos revelar caminhos.
+                </h2>
+
+                <p class="highlight">
+                    Em um mundo acelerado pelo turismo
+                    de massa, escolhemos a direção oposta:
+                    a essência sobre a aparência.
+                </p>
+
+                <p>
+                    Acreditamos que a verdadeira conexão
+                    com a natureza exige respeito, tempo
+                    e vivências reais, longe de roteiros
+                    padronizados.
+                </p>
+
+                <p>
+                    Unimos rigor técnico em gestão ambiental
+                    e segurança com a sensibilidade de criar
+                    experiências sob medida.
+                </p>
+
+                <p>
+                    Cada rota na Mata Atlântica é um convite
+                    para trocar o caos urbano pela contemplação
+                    consciente, pelo aprendizado e pelo
+                    contato genuíno com o território.
+                </p>
+
+                <ul class="about-list">
+
+                    <li>
+                        Turismo de experiência
+                    </li>
+
+                    <li>
+                        Ecoturismo e turismo de aventura
+                    </li>
+
+                    <li>
+                        Educação ambiental e interpretação
+                        da natureza
+                    </li>
+
+                    <li>
+                        Experiências personalizadas
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================================================
+     SEGURANÇA
+     ============================================================== -->
+
+<section class="safety" id="seguranca">
+
+    <div class="container">
+
+        <div class="safety-layout">
+
+            <div class="safety-copy reveal">
+
+                <span class="section-label">
+                    Aventura com responsabilidade
+                </span>
+
+                <h2>
+                    Liberdade para explorar.
+                    Segurança para voltar.
+                </h2>
+
+                <p>
+                    Para a Imersiva, segurança não é um
+                    detalhe operacional. É parte essencial
+                    da experiência.
+                </p>
+
+                <p style="margin-top:15px;">
+                    O planejamento considera características
+                    do ambiente, perfil dos participantes,
+                    logística, equipamentos, condições da
+                    atividade e procedimentos de segurança.
+                </p>
+
+            </div>
+
+
+            <div class="safety-box reveal">
+
+                <h3>
+                    Planejamento antes da aventura.
+                </h3>
+
+                <p>
+                    Cada experiência é analisada de acordo
+                    com suas características e necessidades.
+                </p>
+
+                <div class="safety-points">
+
+                    <div class="safety-point">
+                        <span></span>
+                        Avaliação da atividade
+                    </div>
+
+                    <div class="safety-point">
+                        <span></span>
+                        Gestão de riscos
+                    </div>
+
+                    <div class="safety-point">
+                        <span></span>
+                        Orientação aos participantes
+                    </div>
+
+                    <div class="safety-point">
+                        <span></span>
+                        Planejamento logístico
+                    </div>
+
+                    <div class="safety-point">
+                        <span></span>
+                        Condução responsável
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================================================
+     DEPOIMENTOS
+     ============================================================== -->
+
+<section class="testimonials" id="depoimentos">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                Experiências que ficam
+            </span>
+
+            <h2 class="section-title">
+                Quem vive, conta.
+            </h2>
+
+            <p class="section-description">
+                Este espaço deve receber avaliações reais
+                dos clientes, imagens das experiências e,
+                posteriormente, integração com avaliações
+                verificadas.
+            </p>
+
+        </div>
+
+
+        <div class="testimonial-grid">
+
+            <!-- SUBSTITUIR PELOS DEPOIMENTOS REAIS -->
+
+            <article class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Adicione aqui um depoimento real de
+                    um participante descrevendo a experiência,
+                    o atendimento e a condução.”
+                </p>
+
+                <div class="client">
+
+                    <div class="client-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>
+                            Cliente real
+                        </strong>
+
+                        <span>
+                            Experiência Imersiva
+                        </span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Utilize aqui uma avaliação real,
+                    preferencialmente acompanhada de foto
+                    autorizada do participante.”
+                </p>
+
+                <div class="client">
+
+                    <div class="client-avatar">
+                        B
+                    </div>
+
+                    <div>
+                        <strong>
+                            Cliente real
+                        </strong>
+
+                        <span>
+                            Trilha / Travessia
+                        </span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Depoimentos verdadeiros são uma das
+                    principais ferramentas de conversão.
+                    Substitua este conteúdo por uma avaliação.”
+                </p>
+
+                <div class="client">
+
+                    <div class="client-avatar">
+                        C
+                    </div>
+
+                    <div>
+                        <strong>
+                            Cliente real
+                        </strong>
+
+                        <span>
+                            Vivência na natureza
+                        </span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================================================
+     FAQ
+     ============================================================== -->
+
+<section class="faq">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                Dúvidas
+            </span>
+
+            <h2 class="section-title">
+                Antes de partir,
+                algumas respostas.
+            </h2>
+
+        </div>
+
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+
+                <button class="faq-question" aria-expanded="false" aria-controls="faq1-answer">
+
+                    <span>
+                        Posso solicitar uma experiência
+                        personalizada para meu grupo?
+                    </span>
+
+                    <span>
+                        +
+                    </span>
+
+                </button>
+
+                <div id="faq1-answer" class="faq-answer" aria-hidden="true">
+
+                    Sim. A proposta da Imersiva é justamente
+                    construir experiências de acordo com o
+                    perfil, objetivo, disponibilidade e
+                    características de cada grupo.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question" aria-expanded="false" aria-controls="faq2-answer">
+
+                    <span>
+                        A experiência é indicada para iniciantes?
+                    </span>
+
+                    <span>
+                        +
+                    </span>
+
+                </button>
+
+                <div id="faq2-answer" class="faq-answer" aria-hidden="true">
+
+                    A indicação depende da atividade e das
+                    características da pessoa ou grupo.
+                    Antes do agendamento fazemos uma avaliação
+                    para verificar a compatibilidade entre
+                    participante e experiência.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question" aria-expanded="false" aria-controls="faq3-answer">
+
+                    <span>
+                        A Imersiva atende escolas e instituições?
+                    </span>
+
+                    <span>
+                        +
+                    </span>
+
+                </button>
+
+                <div id="faq3-answer" class="faq-answer" aria-hidden="true">
+
+                    Sim. A estrutura pode ser adaptada para
+                    escolas, instituições, grupos, projetos
+                    educacionais e organizações interessadas
+                    em experiências de educação ambiental,
+                    natureza e território.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================================================
+     CONTATO
+     ============================================================== -->
+
+<section class="contact" id="contato">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="reveal">
+
+                <span class="section-label">
+                    Vamos planejar?
+                </span>
+
+                <h2 class="section-title">
+                    Sua próxima experiência
+                    começa aqui.
+                </h2>
+
+                <p class="section-description">
+                    Conte o que você está imaginando.
+                    A Imersiva avalia o cenário e entra
+                    em contato para construir a melhor
+                    possibilidade para você ou seu grupo.
+                </p>
+
+
+                <div class="contact-info">
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            @
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                E-mail
+                            </strong>
+
+                            <span>
+                                SEU_EMAIL
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ↗
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Área de atuação
+                            </strong>
+
+                            <span>
+                                São Paulo e destinos sob consulta
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ◉
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Atendimento
+                            </strong>
+
+                            <span>
+                                Agendamento prévio
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-form reveal">
+
+                <h3 class="form-title">
+                    Conte-nos sobre sua experiência
+                </h3>
+
+                <form id="contactForm" novalidate>
+
+                    <div class="form-group">
+
+                        <label for="nome">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Seu nome"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="whatsapp">
+                            WhatsApp
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="whatsapp"
+                            name="whatsapp"
+                            placeholder="(11) 99999-9999"
+                            autocomplete="tel"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tipo">
+                            Tipo de experiência
+                        </label>
+
+                        <select
+                            id="tipo"
+                            name="tipo"
+                            autocomplete="off"
+                            required>
+
+                            <option value="">
+                                Selecione uma opção
+                            </option>
+
+                            <option>
+                                Trilha ou travessia
+                            </option>
+
+                            <option>
+                                Ecoturismo
+                            </option>
+
+                            <option>
+                                Turismo de aventura
+                            </option>
+
+                            <option>
+                                Educação ambiental
+                            </option>
+
+                            <option>
+                                Experiência personalizada
+                            </option>
+
+                            <option>
+                                Escola / instituição
+                            </option>
+
+                            <option>
+                                Grupo / empresa
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="data">
+                            Destino / data desejada
+                        </label>
+
+                        <input
+                            type="text"
+                            id="data"
+                            name="data"
+                            placeholder="Ex.: Serra do Mar — agosto"
+                            autocomplete="off">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="mensagem">
+                            Conte um pouco mais
+                        </label>
+
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            placeholder="Quantidade de pessoas, objetivo ou qualquer informação importante."
+                            autocomplete="off"></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary form-submit">
+
+                        Solicitar avaliação pelo WhatsApp
+                        →
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ==============================================================
+     FOOTER
+     ============================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#inicio" class="logo">
+
+                    <div class="logo-symbol">
+                        I
+                    </div>
+
+                    <div class="logo-text">
+
+                        <strong>
+                            IMERSIVA
+                        </strong>
+
+                        <span>
+                            TURISMO DE EXPERIÊNCIAS
+                        </span>
+
+                    </div>
+
+                </a>
+
+                <p>
+                    Turismo de experiência, natureza,
+                    aventura e educação ambiental para
+                    quem deseja sair do roteiro e conectar
+                    com a essência.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Navegação
+                </div>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#experiencias">
+                            Experiências
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre">
+                            Sobre a Imersiva
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#seguranca">
+                            Segurança
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#depoimentos">
+                            Depoimentos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">
+                            Contato
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Institucional
+                </div>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#">
+                            Política de Privacidade
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Termos de Uso
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Cadastur
+                        </a>
+                    </li>
+
+                    <li>
+                        <span>
+                            CNPJ: SEU_CNPJ
+                        </span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span id="footerCopyright">
+                © 2026 Imersiva Turismo de Experiências.
+                Todos os direitos reservados.
+            </span>
+
+            <span>
+                Natureza • Experiência • Segurança
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ==============================================================
+     WHATSAPP FLUTUANTE
+     ============================================================== -->
+
+<a
+    href="#"
+    class="whatsapp"
+    id="floatingWhatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar com a Imersiva pelo WhatsApp">
+
+    <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2">
+
+        <path
+            d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4.2-1.1L3 20l1.2-4.5A8.5 8.5 0 1 1 21 11.5z"/>
+
+        <path
+            d="M8.5 9.5c.3 1.8 2.2 3.7 4 4l1.3-.9c.2-.2.5-.2.8-.1l1.4.7c.3.1.4.5.3.8-.3 1-1.1 1.5-2 1.5-3.8-.2-7.3-3.7-7.5-7.5 0-.9.5-1.7 1.5-2 .3-.1.7 0 .8.3l.7 1.4c.1.3.1.6-.1.8z"/>
+
+    </svg>
+
+</a>
+
+
+<!-- ==============================================================
+     JAVASCRIPT
+     ============================================================== -->
+
+<script>
+
+    /* ==========================================================
+       CONFIGURAÇÃO
+       ========================================================== */
+
+    const CONFIG = {
+
+        /*
+        Substitua pelo número real no formato internacional:
+        Exemplo: 5511999999999
+
+        sem:
+        +
+        espaços
+        parênteses
+        hífens
+        */
+
+        whatsapp: "SEU_WHATSAPP"
+
+    };
+
+    /* ==========================================================
+       IMAGENS RANDOMIZADAS (HERO + 3 EXPERIÊNCIAS)
+       ==========================================================
+       Substitua/adicione URLs conforme quiser — usamos as URLs que você
+       forneceu. O script embaralha e aplica:
+         index 0 -> hero
+         index 1 -> .experience-1
+         index 2 -> .experience-2
+         index 3 -> .experience-3
+    */
+
+    (function applyRandomImages() {
+        // Lista de URLs (sem url(...) — serão aplicadas pelo JS)
+        const imageUrls = [
+            "https://lh3.googleusercontent.com/d/1M_vYCbybVOB6K0_ky2XN7ekbehnVhDYy",
+            "https://lh3.googleusercontent.com/d/14T6WKz3WdR0X6zwiFaMq2SkllDlrNCm4",
+            "https://lh3.googleusercontent.com/d/1Tik3pn006fupcdfeeHjvScQ-QPoOLglY",
+            "https://lh3.googleusercontent.com/d/18XKA4O9Zunld01WyY3m1_X4-Uo8vLEJt"
+        ];
+
+        // Shuffle (Fisher-Yates)
+        function shuffle(array) {
+            const a = array.slice();
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        const shuffled = shuffle(imageUrls);
+
+        // Aplica a primeira imagem ao hero via propriedade CSS --hero-image
+        if (shuffled[0]) {
+            document.documentElement.style.setProperty('--hero-image', `url("${shuffled[0]}")`);
+        }
+
+        // Aplica as próximas três nas experience cards (se existirem)
+        const expSelectors = ['.experience-1', '.experience-2', '.experience-3'];
+        for (let i = 0; i < expSelectors.length; i++) {
+            const el = document.querySelector(expSelectors[i]);
+            const img = shuffled[i + 1];
+            if (el && img) {
+                el.style.setProperty('--image', `url("${img}")`);
+            }
+        }
+
+        // Nota: se quiser rotacionar periodicamente, podemos adicionar um intervalo aqui.
+    })();
+
+
+    /* ==========================================================
+       HEADER AO ROLAR
+       ========================================================== */
+
+    const header =
+        document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 30) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+
+    /* ==========================================================
+       MENU MOBILE
+       ========================================================== */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+        const active =
+            navLinks.classList.toggle("active");
+
+        // aria-expanded sempre string "true" ou "false"
+        menuToggle.setAttribute(
+            "aria-expanded",
+            active ? "true" : "false"
+        );
+
+    });
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+    /* ==========================================================
+       ANIMAÇÕES REVEAL (RESPEITA PREFERS-REDUCED-MOTION)
+       ========================================================== */
+
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReduced) {
+        // deixamos tudo visível imediatamente para quem prefere redução de movimento
+        document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    } else {
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+        document
+            .querySelectorAll(".reveal")
+            .forEach(element => {
+
+                observer.observe(element);
+
+            });
+    }
+
+
+    /* ==========================================================
+       FAQ (ACESSIBILIDADE: aria-expanded / aria-hidden)
+       ========================================================== */
+
+    document
+        .querySelectorAll(".faq-question")
+        .forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const item =
+                    button.parentElement;
+
+                const alreadyActive =
+                    item.classList.contains("active");
+
+
+                // fechar todos e resetar aria
+                document
+                    .querySelectorAll(".faq-item")
+                    .forEach(faq => {
+
+                        faq.classList.remove(
+                            "active"
+                        );
+
+                        const btn = faq.querySelector(".faq-question");
+                        const ans = faq.querySelector(".faq-answer");
+
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                        if (ans) ans.setAttribute("aria-hidden", "true");
+
+                    });
+
+
+                if (!alreadyActive) {
+
+                    item.classList.add(
+                        "active"
+                    );
+
+                    button.setAttribute("aria-expanded", "true");
+
+                    const answer = item.querySelector(".faq-answer");
+                    if (answer) answer.setAttribute("aria-hidden", "false");
+
+                }
+
+            });
+
+        });
+
+
+    /* ==========================================================
+       FORMULÁRIO → WHATSAPP (VALIDAÇÃO E NORMALIZAÇÃO)
+       ========================================================== */
+
+    const form =
+        document.getElementById("contactForm");
+
+
+    form.addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        const nome =
+            document
+                .getElementById("nome")
+                .value.trim();
+
+
+        const whatsappUser =
+            document
+                .getElementById("whatsapp")
+                .value.trim();
+
+
+        const tipo =
+            document
+                .getElementById("tipo")
+                .value;
+
+
+        const data =
+            document
+                .getElementById("data")
+                .value.trim();
+
+
+        const mensagem =
+            document
+                .getElementById("mensagem")
+                .value.trim();
+
+
+        // valida CONFIG.whatsapp
+        if (!CONFIG.whatsapp || CONFIG.whatsapp === "SEU_WHATSAPP") {
+            alert("Número do WhatsApp não está configurado. Atualize CONFIG.whatsapp no script.");
+            return;
+        }
+
+        // normaliza número configurado (remove tudo que não for dígito)
+        const configured = CONFIG.whatsapp.replace(/\D/g, "");
+        if (!/^\d{10,15}$/.test(configured)) {
+            alert("O número do WhatsApp configurado é inválido. Use formato internacional sem sinais (ex.: 5511999999999).");
+            return;
+        }
+
+        const texto =
+
+`Olá, Imersiva! 🌿
+
+Gostaria de solicitar uma avaliação para uma experiência.
+
+Nome: ${nome || "Não informado"}
+WhatsApp: ${whatsappUser || "Não informado"}
+Tipo de experiência: ${tipo || "Não informado"}
+Destino / data desejada: ${data || "Ainda não definido"}
+
+Informações adicionais:
+${mensagem || "Não informado."}
+
+Gostaria de conversar sobre as possibilidades.`;
+
+        const url =
+            `https://wa.me/${configured}?text=${encodeURIComponent(texto)}`;
+
+        // abre em nova aba de forma segura
+        const newWindow = window.open(url, "_blank");
+        if (newWindow) newWindow.opener = null;
+
+    });
+
+
+    /* ==========================================================
+       ATUALIZAÇÃO DO LINK FLUTUANTE DO WHATSAPP
+       ========================================================== */
+
+    (function setupFloatingWhatsapp() {
+        const whatsappLink = document.getElementById("floatingWhatsapp");
+
+        if (!whatsappLink) return;
+
+        if (!CONFIG.whatsapp || CONFIG.whatsapp === "SEU_WHATSAPP") {
+            // desativa o link e evita navegação acidental
+            whatsappLink.setAttribute("href", "#");
+            whatsappLink.setAttribute("aria-disabled", "true");
+            whatsappLink.addEventListener("click", e => e.preventDefault());
+            return;
+        }
+
+        const cleaned = CONFIG.whatsapp.replace(/\D/g, "");
+        if (/^\d{10,15}$/.test(cleaned)) {
+            whatsappLink.setAttribute("href", `https://wa.me/${cleaned}`);
+            // abre em nova aba por padrão já definido no markup (target="_blank")
+        } else {
+            whatsappLink.setAttribute("href", "#");
+            whatsappLink.setAttribute("aria-disabled", "true");
+            whatsappLink.addEventListener("click", e => e.preventDefault());
+        }
+    })();
+
+
+    /* ==========================================================
+       ANO AUTOMÁTICO (ATUALIZAÇÃO MAIS SEGURA)
+       ========================================================== */
+
+    (function updateFooterYear() {
+        const footerYearEl = document.getElementById("footerCopyright");
+        if (!footerYearEl) return;
+        const year = new Date().getFullYear();
+        footerYearEl.textContent = footerYearEl.textContent.replace(/\d{4}/, year);
+    })();
+
+</script>
+
+</body>
+</html>
